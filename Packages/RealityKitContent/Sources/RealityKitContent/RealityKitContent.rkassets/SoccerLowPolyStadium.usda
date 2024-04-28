@@ -1,0 +1,168 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 1.0 (409.60.6)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    def "Stadium_LOWPOLY" (
+        active = true
+        prepend references = @Stadium.LOWPOLY.usdz@
+    )
+    {
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Materials"
+        {
+            over "StadiumTrimBMetalShader"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+
+                over "StadiumTrimBMetalShaderPreviewSurface"
+                {
+                    color3f inputs:diffuseColor = (0.077788055, 0.1782421, 0.33507496) (
+                        colorSpace = "srgb_displayp3"
+                    )
+                    delete color3f inputs:diffuseColor.connect = </Root/Stadium_LOWPOLY/Materials/StadiumTrimBMetalShader/diffuseColor_texture.outputs:rgb>
+                }
+            }
+
+            over "GlassShader"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "WhiteMetalShader"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "ConcreteBaseShader"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "GrateShader"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "FlagShader"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "MainGrass"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "WhiteLines"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "GrassShader"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "DarkGrass"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "DarkCordShader"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "GoalNetShader"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "PostsMetalShader"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "BluePlasticShader"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+        }
+    }
+
+    def "Stadium_LOWPOLY_Seats" (
+        active = true
+        prepend references = @Stadium.LOWPOLY.Seats.usdz@
+    )
+    {
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Materials"
+        {
+            over "SeatsShader"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+
+                over "SeatsShaderPreviewSurface"
+                {
+                    color3f inputs:diffuseColor = (0.07500732, 0.275351, 0.6188447) (
+                        colorSpace = "srgb_displayp3"
+                    )
+                    delete color3f inputs:diffuseColor.connect = </Root/Stadium_LOWPOLY_Seats/Materials/SeatsShader/diffuseColor_texture.outputs:rgb>
+                }
+            }
+        }
+    }
+
+    def "Selectores" (
+        prepend references = @Selectores.usdz@
+    )
+    {
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Materials"
+        {
+            over "SELECTOR"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+
+                over "SELECTORPreviewSurface"
+                {
+                    color3f inputs:diffuseColor = (0.29771504, 0.5363524, 0.54520714) (
+                        colorSpace = "srgb_displayp3"
+                    )
+                    float inputs:opacity = 0.7
+                }
+            }
+        }
+    }
+}
+
