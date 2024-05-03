@@ -28,7 +28,9 @@ struct EntityGestureApp: App {
                 .environment(model)
         }
         .windowStyle(.volumetric)
-        .defaultSize(width: 5, height: 3.75, depth: 2, in: .meters)
+        .defaultSize(width: 5, height: 5, depth: 5, in: .meters)
+        
+        
         
         
         

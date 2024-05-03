@@ -41,7 +41,7 @@ Rotate Only
 
     var scale: Float = 0.45
        //var position: SIMD3<Float> = .zero
-       var position: SIMD3<Float> = SIMD3<Float>(0, -1.4, 0)
+    var position: SIMD3<Float> = SIMD3<Float>(0, -1.3, 0.5)
        
        @Environment(\.openImmersiveSpace) private var openImmersiveSpace
     
